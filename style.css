@@ -17,6 +17,7 @@
   .inactive {
     display: none;
   }
+
 /* navbar del desktop */
   nav {
     display: flex;
@@ -123,8 +124,9 @@
   /* menu del movile */
 
   .mobile-menu {
+    background-color: var(--white);
     position: absolute;
-    top: 40px;
+    top: 61px;
     padding: 24px;
   }
   .mobile-menu a {
@@ -156,6 +158,7 @@
   /* menu carrito de compra */
   
   .product-detail {
+    background-color: var(--white);
     width: 360px;
     padding: 0 24px 15px;
     border: solid var(--hospital-green) 1px;
@@ -198,6 +201,7 @@
     font-weight: bold;
   }
   .shopping-cart {
+    background-color: var(--white);
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     gap: 16px;
