@@ -30,3 +30,25 @@ function toggleMobileMenu(){
     aside.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
 }
+
+/*listade productos por array*/
+
+const productList = [];
+
+productList.push({
+    name: 'biker',
+    price: 120,
+    img: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+});
+
+productList.push({
+    name: 'pc',
+    price: 620,
+    img: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+});
+
+productList.push({
+    name: 'card',
+    price: 420,
+    img: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+});
