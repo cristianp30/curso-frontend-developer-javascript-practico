@@ -127,8 +127,9 @@
     background-color: var(--white);
     position: absolute;
     top: 61px;
-    
+    padding: 0 0 0 24px;
     width: calc(100% - 24px);
+    left: 0;
   }
   .mobile-menu a {
     text-decoration: none;

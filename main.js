@@ -2,7 +2,9 @@ const emailmenu = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamIcon = document.querySelector('.menu');
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
+const productDetailCloseIcon = document.querySelector('#productDetail');
 const shoppingCardProduct = document.querySelector('#shoppingCardProduct');
+const detailProductContainer = document.querySelector('#productDetail');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cardsContainer = document.querySelector('.cards-container');
 
@@ -10,6 +12,8 @@ const cardsContainer = document.querySelector('.cards-container');
 menuHamIcon.addEventListener('click', toggleMobileMenu);
 emailmenu.addEventListener('click', toggleDesktopMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoMenu);
+productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
+
 
 function toggleDesktopMenu(){
     shoppingCardProduct.classList.add('inactive');
@@ -19,17 +23,36 @@ function toggleDesktopMenu(){
 function toggleCarritoMenu(){
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
     const isDesktopMenuClosed = desktopMenu.classList.contains('inactive');
+    
     if (!isMobileMenuClosed ||!isDesktopMenuClosed ) {
         mobileMenu.classList.add('inactive');
         desktopMenu.classList.add('inactive');
     }
+
+    const isProductDetailClosed = detailProductContainer.classList.contains('inactive');
+    if (!isProductDetailClosed  ) {
+        detailProductContainer.classList.add('inactive');
+        
+    }
+    
     shoppingCardProduct.classList.toggle('inactive');
     
+}
+
+
+function openDetailProductAside(){
+    shoppingCardProduct.classList.add('inactive');
+    detailProductContainer.classList.remove('inactive');
+}
+
+function closeProductDetailAside(){
+   productDetailCloseIcon.classList.add('inactive');
 }
 
 function toggleMobileMenu(){
     shoppingCardProduct.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
+    closeProductDetailAside();
 }
 
 /*listade productos por array*/
@@ -45,7 +68,7 @@ productList.push({
 productList.push({
     name: 'pc',
     price: 620,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    image: 'https://exitocol.vtexassets.com/arquivos/ids/11639638/computador-pc-de-escritorio-torre-gamer-amd-athlon-3000g-ssd-240gb-hdd-1tb-ram-16gb-led-22-full.jpg?v=637786552371100000'
 });
 
 productList.push({
@@ -74,6 +97,8 @@ function renderProducts(arr) {
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openDetailProductAside);
+
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
